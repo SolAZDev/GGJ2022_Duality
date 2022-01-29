@@ -23,7 +23,7 @@ Material:
   m_Name: BaseMaterial 1
   m_Shader: {fileID: 4800000, guid: 849dc4ff793a3f943ad21a3b6ee26456, type: 3}
   m_ShaderKeywords: _ADDITIONAL_LIGHTS_ENABLED _ENVIRONMENT_LIGHTING_ENABLED _SPECULAR
-    _TOON_RECEIVE_SHADOWS _ZWRITE_ON
+    _TOON_RECEIVE_SHADOWS _VERTEX_COLOR _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -153,7 +153,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _UseRampMap: 0
-    - _VertexColor: 0
+    - _VertexColor: 1
     - _VertexLit: 0
     - _WorkflowMode: 1
     - _ZWrite: 1

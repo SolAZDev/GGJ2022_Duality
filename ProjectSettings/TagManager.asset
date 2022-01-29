@@ -8,6 +8,7 @@ TagManager:
   - LightArea
   - Enemy
   - Switch
+  - PlayerLightEmitter
   layers:
   - Default
   - TransparentFX
