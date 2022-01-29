@@ -9,6 +9,15 @@
       },
       "hash": "152665524d0b45ad483cdcc5ae8abf346528efc1"
     },
+    "com.hauntedpsx.render-pipelines.psx": {
+      "version": "1.6.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.3.1"
+      },
+      "url": "https://package.openupm.com"
+    },
     "com.pixelplacement.surge.tween": {
       "version": "1.0.2",
       "depth": 0,

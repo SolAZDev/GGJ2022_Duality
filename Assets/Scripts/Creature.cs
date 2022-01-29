@@ -40,5 +40,7 @@ public class Creature : MonoBehaviour
         canBeHurt = true;
     }
 
+    // public void GoToScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
 
 }

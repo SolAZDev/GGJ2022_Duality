@@ -29,6 +29,7 @@ MonoBehaviour:
     m_Name: package.openupm.com
     m_Url: https://package.openupm.com
     m_Scopes:
+    - com.hauntedpsx.render-pipelines.psx
     - com.openupm
     - com.pixelplacement.surge.tween
     m_IsDefault: 0
@@ -42,6 +43,7 @@ MonoBehaviour:
       m_Name: package.openupm.com
       m_Url: https://package.openupm.com
       m_Scopes:
+      - com.hauntedpsx.render-pipelines.psx
       - com.openupm
       - com.pixelplacement.surge.tween
       m_IsDefault: 0
@@ -50,6 +52,7 @@ MonoBehaviour:
     m_Name: package.openupm.com
     m_Url: https://package.openupm.com
     m_Scopes:
+    - com.hauntedpsx.render-pipelines.psx
     - com.openupm
     - com.pixelplacement.surge.tween
     m_SelectedScopeIndex: 0
