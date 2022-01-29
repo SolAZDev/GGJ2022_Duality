@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pixelplacement;
 using UnityEngine.InputSystem;
 
 // [RequireComponent(typeof(CapsuleCollider))]
@@ -26,14 +27,12 @@ public class Player : Creature
     void Update()
     {
         // animator.SetFloat("MoveRun", jDir.magnitude);
-        if (jDir.magnitude > .1f)
-        {
-            Vector3 CamForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
-            mDir = (jDir.y * CamForward + jDir.x * Camera.main.transform.right) * (8 * jDir.magnitude);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mDir, Vector3.up), Time.deltaTime * 15);
-        }
-        else mDir = Vector3.zero;
-        cc.SimpleMove(mDir);
+        Vector3 CamForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 joy = (jDir.y * CamForward + jDir.x * Camera.main.transform.right) * (8 * jDir.magnitude);
+        mDir = new Vector3(joy.x, mDir.y, joy.z);
+        mDir.y += Physics.gravity.y * 2 * Time.deltaTime; //Oops there goes Gravity
+        if (jDir.magnitude > 0.2f) Tween.LocalRotation(transform, Quaternion.LookRotation(new Vector3(mDir.x, 0, mDir.z), Vector3.up).eulerAngles, .1f, 0);
+        cc.Move(mDir * Time.deltaTime);
     }
 
     public void ThrowLight()
@@ -41,7 +40,7 @@ public class Player : Creature
         if (LightBody == null) return;
         LightBody.transform.parent = null;
         LightBody.isKinematic = false;
-        LightBody.AddForce((transform.forward * 1) + (transform.up * 5), ForceMode.Impulse);
+        LightBody.AddForce((transform.forward * 15) + (transform.up * 5), ForceMode.Impulse);
         print("Y E E T");
         LightBody = null;
     }
@@ -54,14 +53,10 @@ public class Player : Creature
             if (LightBody != null) return;
             LightBody = other.gameObject.GetComponent<Rigidbody>();
             LightBody.transform.parent = this.transform;
-            // LightBody.useGravity = false;
             LightBody.isKinematic = true;
             LightBody.transform.position = ((transform.position) + (transform.forward * 2));
         }
 
-    }
-    private void OnCollisionEnter(Collision other)
-    {
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -89,7 +84,13 @@ public class Player : Creature
 
     #region Input System
     public void OnMove(InputValue dir) => jDir = dir.Get<Vector2>();
-    public void OnJump() { if (cc.isGrounded) { mDir = new Vector3(mDir.x, mDir.y + 8, mDir.z); } }
+    // public void OnJump() { if (cc.isGrounded) { mDir = new Vector3(mDir.x, mDir.y + 8, mDir.z); } }
+    public void OnJump()
+    {
+        float up = 8;
+        print("Jumping?" + cc.isGrounded + ":" + up);
+        if (cc.isGrounded) { mDir.y = up; }
+    }
     public void OnThrow() => ThrowLight();
     #endregion
 }
