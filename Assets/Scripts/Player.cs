@@ -40,11 +40,10 @@ public class Player : Creature
         if (LightBody == null) return;
         LightBody.transform.parent = null;
         LightBody.isKinematic = false;
-        LightBody.AddForce((transform.forward * 15) + (transform.up * 5), ForceMode.Impulse);
+        LightBody.AddForce((transform.forward * 15) + (transform.up * 5), ForceMode.VelocityChange);
         print("Y E E T");
         LightBody = null;
     }
-
     private void OnControllerColliderHit(ControllerColliderHit other)
     {
         print(other.transform.tag);
@@ -54,9 +53,9 @@ public class Player : Creature
             LightBody = other.gameObject.GetComponent<Rigidbody>();
             LightBody.transform.parent = this.transform;
             LightBody.isKinematic = true;
-            LightBody.transform.position = ((transform.position) + (transform.forward * 2));
+            LightBody.transform.position = transform.position + (transform.forward * 2);
+            LightBody.transform.GetChild(0).gameObject.SetActive(true);
         }
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -93,4 +92,9 @@ public class Player : Creature
     }
     public void OnThrow() => ThrowLight();
     #endregion
+
+
+
+
+
 }

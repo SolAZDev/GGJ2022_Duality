@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Switch
   - PlayerLightEmitter
+  - MAST_Holder
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - LightField
   - LightOnly
   - DarkOnly
-  - 
+  - YuME_TileMap
   - 
   - 
   - 

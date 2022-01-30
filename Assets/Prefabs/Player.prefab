@@ -316,6 +316,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8904583365304746994}
     m_Modifications:
+    - target: {fileID: 7366793722455839345, guid: 80d964c5c3c5efbbb8cf2325661eeb17, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7366793722604871943, guid: 80d964c5c3c5efbbb8cf2325661eeb17, type: 3}
       propertyPath: m_Name
       value: LightSphere
@@ -330,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7366793722604871960, guid: 80d964c5c3c5efbbb8cf2325661eeb17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7366793722604871960, guid: 80d964c5c3c5efbbb8cf2325661eeb17, type: 3}
       propertyPath: m_LocalPosition.z
