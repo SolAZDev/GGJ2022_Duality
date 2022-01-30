@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public Rigidbody originalLight;
     public Material HurtMaterial;
     public GameObject LightLayer, DarkLayer;
     private void Start() => LevelManager.instance = this;

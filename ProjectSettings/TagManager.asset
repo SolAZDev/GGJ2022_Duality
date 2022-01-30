@@ -10,6 +10,7 @@ TagManager:
   - Switch
   - PlayerLightEmitter
   - MAST_Holder
+  - LightRecovery
   layers:
   - Default
   - TransparentFX

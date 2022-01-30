@@ -223,9 +223,10 @@ GameObject:
   - component: {fileID: 33162580840038676}
   - component: {fileID: 23912320858128400}
   - component: {fileID: 95602279839636044}
+  - component: {fileID: 1769455300259754181}
   m_Layer: 0
   m_Name: light_A_vol
-  m_TagString: Untagged
+  m_TagString: LightRecovery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,3 +314,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1769455300259754181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692027003111042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6325114, y: 1.2182859, z: 1.8804609}
+  m_Center: {x: -1.8552428e-13, y: -0.20711301, z: 0.9402304}

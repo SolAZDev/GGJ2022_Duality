@@ -13,7 +13,7 @@ public class TagEvent
 [RequireComponent(typeof(Collider))]
 public class CollissionEvent : MonoBehaviour
 {
-    List<TagEvent> TriggerEnterEvents, TriggerExitEvents, ColEnterEvents, ColExitEvents;
+    public List<TagEvent> TriggerEnterEvents, TriggerExitEvents, ColEnterEvents, ColExitEvents;
     void OnCollisionEnter(Collision other) => FindAndExecuteEvent(other.transform.tag, ColEnterEvents);
     void OnCollisionExit(Collision other) => FindAndExecuteEvent(other.transform.tag, ColExitEvents);
     void OnTriggerEnter(Collider other) => FindAndExecuteEvent(other.transform.tag, TriggerEnterEvents);

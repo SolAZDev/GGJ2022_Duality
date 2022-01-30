@@ -8,7 +8,7 @@ public class Creature : MonoBehaviour
 
     public int Health = 3, StartHealth = 3;
     public bool isDark = false, canBeHurt = false;
-    public MeshRenderer mesh, altMesh;
+    public Renderer mesh, altMesh;
 
     public void Revive()
     {
@@ -40,7 +40,6 @@ public class Creature : MonoBehaviour
         canBeHurt = true;
     }
 
-    // public void GoToScene(string sceneName) => SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 
 
 }
